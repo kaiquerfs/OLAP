@@ -60,11 +60,11 @@ dados_B3['data_pregao'] = dados_B3['data_pregao'].dt.strftime('%d/%m/%Y')
 
 # Configuração da conexão com o SQL Server
 conn_str = (
-    "DRIVER={SQL Server};"
-    "SERVER=DESKTOP-ES7DQEA;" 
-    "DATABASE=OLAP;"   
-    "UID=DESKTOP-ES7DQEA\\kaiqu;"  # Note a dupla barra invertida
-    "PWD=;"             
+    "DRIVER="  # Ajuste para o driver correto
+    "SERVER="                  # Servidor rodando no Docker (localhost)
+    "DATABASE=;"                        # Banco de dados (pode mudar se necessário)
+    "UID=;"                                 # Usuário do SQL Server
+    "PWD=;"                        # Senha do SQL Server
 )
 
 conn = pyodbc.connect(conn_str)
